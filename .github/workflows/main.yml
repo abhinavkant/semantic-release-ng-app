@@ -28,12 +28,9 @@ jobs:
           npm i
           npm run build 
           
-      - name: Tar files
-        run: tar -cvf dist/my_app.tar dist/my-app
-          
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v3
         with: 
           name: my_app
-          path: dist/my_app.tar
+          path: dist/my-app
         
