@@ -27,3 +27,9 @@ jobs:
         run: |
           npm i
           npm run build
+          
+      - name: Step 3 - Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with: 
+          name: app
+          path: ./dist/my-app
