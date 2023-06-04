@@ -28,18 +28,9 @@ jobs:
           npm i
           npm run build 
           
-      - name: release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-          draft: false
-          prerelease: false
-          release_name: ${{ steps.version.outputs.version }}
-          tag_name: ${{ github.ref }}
-          body_path: CHANGELOG.md
-#       env:
-#         GITHUB_TOKEN: ${{ github.token }}
-#           uses: actions/upload-artifact@v3
-#           with: 
-#             name: app
-#             path: dist/my-app
+      - name: Step 3 - Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v3
+        with: 
+          name: assets-for-download
+          path: dist/my-app
+        
