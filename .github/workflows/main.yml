@@ -35,5 +35,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with: 
           name: my_app
-          path: my_app.tar
+          path: dist/my_app.tar
         
